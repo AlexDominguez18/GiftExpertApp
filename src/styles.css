@@ -1,0 +1,50 @@
+/*Include tailwind*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Custom CSS*/
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
