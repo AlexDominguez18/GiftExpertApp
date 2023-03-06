@@ -1,4 +1,4 @@
-import SearchGif from "./SearchGif"
+import { SearchGif } from "./"
 
 const titleStyles = `
   text-center

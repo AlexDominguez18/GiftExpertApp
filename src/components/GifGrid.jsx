@@ -1,9 +1,11 @@
+import { useContext } from 'react'
+import { FilterContext } from '../context/FilterContext'
 import { useFetchGifs } from '../hooks/useFetchGifs'
-import GifItem from './GifItem'
-import Spinner from './Spinner'
+import { GifItem, Spinner } from './'
 
-const GifGrid = ({ filter }) => {
-  const { images, loading } = useFetchGifs(filter)
+const GifGrid = () => {
+  const { filter } = useContext(FilterContext)
+  const { images, isLoading } = useFetchGifs(filter)
 
   return (
     <div className={ gridStyles }>
@@ -12,7 +14,7 @@ const GifGrid = ({ filter }) => {
       </div>
       <div className={ gridBodyStyles }>
       {
-        loading 
+        isLoading 
           ? <Spinner /> 
           : images.map( image => <GifItem key={image.id} {... image} />)
       }

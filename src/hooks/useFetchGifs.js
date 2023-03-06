@@ -8,12 +8,13 @@ const useFetchGifs = (filter) => {
   const getImages = async () => {
     const gifs = await fetchGifs(filter)
     setImages(gifs)
+    setIsLoading(false)
   }
 
   useEffect(() => {
+    setIsLoading(true)  
     getImages()
-    setIsLoading(false)
-  }, [])
+  }, [filter])
 
   return { images, isLoading }
 }

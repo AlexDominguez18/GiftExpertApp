@@ -1,7 +1,12 @@
+import { useContext } from 'react'
+import { FilterContext } from '../context/FilterContext'
 
 const CategoryItem = ({category}) => {
+
+  const { changeFilter } = useContext(FilterContext)
+
   return (
-    <li className={itemStyles}>
+    <li className={itemStyles} onClick={ () => changeFilter(category) }>
       {category}
     </li>
   )

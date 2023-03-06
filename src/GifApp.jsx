@@ -1,14 +1,16 @@
-import Header from './components/Header'
-import { Categories, GifGrid } from './components'
+import { FilterContextProvider } from './context/FilterContext'
+import { Header, Categories, GifGrid } from './components'
 
 const GifApp = () => {
   return (
     <div className="bg-slate-300 min-h-screen">
-      <Header title="GifExpertApp" />
-      <Categories />
-      <GifGrid filter="One piece" />
+      <FilterContextProvider>
+        <Header title="GifExpertApp" />
+        <Categories />
+        <GifGrid />
+      </FilterContextProvider>
     </div>
   )
 }
 
-export { GifApp }
+export default GifApp

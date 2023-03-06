@@ -1,4 +1,4 @@
-import SearchIcon from "./SearchIcon"
+import { SearchIcon } from "./"
 
 const SearchGif = () => {
   return (

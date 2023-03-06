@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import AddCategory from './AddCategory'
-import CategoryItem from './CategoryItem'
+import { AddCategory, CategoryItem } from './'
 
 const Categories = () => {
-
-  const [ categories, setCategories ] = useState([])
+  const [ categories, setCategories ] = useState(['One piece', 'Naruto', 'Dragon ball'])
 
   const addCategory = (newCategory) => {
     if (categories.includes(newCategory)) return    
