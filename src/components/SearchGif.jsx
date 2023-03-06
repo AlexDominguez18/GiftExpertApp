@@ -1,13 +1,13 @@
 import SearchIcon from "./SearchIcon"
 
-const SearchGift = () => {
+const SearchGif = () => {
   return (
     <div className={ searchIconStyles }>
       <SearchIcon />
       <input 
         className={ inputStyles }
         type="text"
-        placeholder="Search gift.." 
+        placeholder="Search gif.." 
       />
     </div>
   )
@@ -32,4 +32,4 @@ const inputStyles = `
   duration-500
 `
 
-export default SearchGift
+export default SearchGif

@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import GiftApp from './GiftApp'
+import GifApp from './GifApp'
 import './styles.css'
 
-document.title = 'GiftExpertApp'
+document.title = 'GifExpertApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GiftApp />
+    <GifApp />
   </React.StrictMode>,
 )

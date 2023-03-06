@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { FaPlus } from 'react-icons/fa'
 
-const AddCategory = ({addCategory}) => {
+const AddCategory = ({ onNewCategory }) => {
 
   const [ category, setCategory ] = useState('')
 
@@ -10,23 +11,30 @@ const AddCategory = ({addCategory}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    addCategory(category)
+    
+    const categoryTrim = category.trim()
+
+    if (categoryTrim.length === 0)
+      return
+  
+    onNewCategory(category)
     setCategory('')
   }
 
   return (
-    <form className={ addCategoryStyles } onSubmit={ e => handleSubmit(e) }>
+    <form className={ addCategoryStyles } onSubmit={ handleSubmit }>
       <input 
         type="text"
         className={ addCategoryInputStyles } 
         value={ category }
-        onChange={ e => handleCategoryChange(e) }
+        onChange={ handleCategoryChange }
       />
       <button 
         className={addCategoryButtonStyles}
         placeholder="Add category..."
       >
-        Add category
+        <FaPlus />
+        <span className="ml-2">Add category</span>
       </button>
     </form>
   )
@@ -51,11 +59,16 @@ const addCategoryInputStyles = `
 const addCategoryButtonStyles = `
   p-2
   mx-5
+  px-5
   bg-slate-600
   text-white
   font-bold
-  hover:bg-slate-800
   rounded-md
+  inline-flex
+  items-center
+  text-sm
+  justify-center
+  hover:bg-slate-800
 `
 
 export default AddCategory

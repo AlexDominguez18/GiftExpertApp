@@ -4,16 +4,11 @@ import CategoryItem from './CategoryItem'
 
 const Categories = () => {
 
-  const [ categories, setCategories ] = useState(['Batman', 'Superman', 'Spiderman'])
+  const [ categories, setCategories ] = useState([])
 
-  const addCategory = (category) => {
-    if (category.trim().length === 0)
-      return
-
-    if (categories.includes(category))
-      return    
-
-    setCategories([...categories, category])
+  const addCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return    
+    setCategories([...categories, newCategory])
   }
 
   return (
@@ -22,10 +17,12 @@ const Categories = () => {
       <div className="flex flex-wrap">
         <ol className={listStyles}>
           {
-            categories.map((category, index) => <CategoryItem key={index} category={category} />)
-          }
+            categories.length
+              ? categories.map((category) => <CategoryItem key={category} category={category} />)
+              : <p className="text-center text-slate-700">No categories</p>
+            }
         </ol>
-        <AddCategory addCategory={addCategory} />
+        <AddCategory onNewCategory={ addCategory } />
       </div>
     </div>
   )

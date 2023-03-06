@@ -1,4 +1,4 @@
-import SearchGift from "./SearchGift"
+import SearchGif from "./SearchGif"
 
 const titleStyles = `
   text-center
@@ -21,7 +21,7 @@ const Header = ({ title }) => {
   return (
     <nav className={navStyles}>
       <h1 className={titleStyles}>{ title }</h1>
-      <SearchGift />
+      <SearchGif />
     </nav>
   )
 }
