@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useFetchGifs } from '../hooks/useFetchGifs'
 import GifItem from './GifItem'
-import fetchGifs from "../helpers/fetchGifs"
+import Spinner from './Spinner'
 
 const GifGrid = ({ filter }) => {
-  const [images, setImages] = useState([])
-
-  const getImages = async () => {
-    const gifs = await fetchGifs(filter)
-    setImages(gifs)
-  }
-
-  useEffect(() => {
-    getImages()
-  }, [])
+  const { images, loading } = useFetchGifs(filter)
 
   return (
     <div className={ gridStyles }>
@@ -21,7 +12,9 @@ const GifGrid = ({ filter }) => {
       </div>
       <div className={ gridBodyStyles }>
       {
-        images.map( image => <GifItem key={image.id} {... image} />)
+        loading 
+          ? <Spinner /> 
+          : images.map( image => <GifItem key={image.id} {... image} />)
       }
       </div>
     </div>
@@ -46,4 +39,4 @@ const gridBodyStyles = `
   justify-center
 `
 
-export default GifGrid
+export { GifGrid }

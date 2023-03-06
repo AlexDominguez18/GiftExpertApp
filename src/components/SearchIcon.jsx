@@ -16,4 +16,4 @@ const SearchIcon = () => {
   )
 }
 
-export default SearchIcon
+export { SearchIcon }

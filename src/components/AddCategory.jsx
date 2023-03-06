@@ -71,4 +71,4 @@ const addCategoryButtonStyles = `
   hover:bg-slate-800
 `
 
-export default AddCategory
+export { AddCategory }

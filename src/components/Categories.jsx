@@ -54,4 +54,4 @@ const listStyles = `
   basis-1/2
 `
 
-export default Categories
+export { Categories }

@@ -1,6 +1,5 @@
 import Header from './components/Header'
-import Categories from './components/Categories'
-import GifGrid from './components/GifGrid'
+import { Categories, GifGrid } from './components'
 
 const GifApp = () => {
   return (
@@ -12,4 +11,4 @@ const GifApp = () => {
   )
 }
 
-export default GifApp
+export { GifApp }

@@ -19,4 +19,4 @@ const gifItemStyles = `
   flex-col
 `
 
-export default GifItem
+export { GifItem }

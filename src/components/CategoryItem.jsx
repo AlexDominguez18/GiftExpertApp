@@ -16,4 +16,4 @@ const itemStyles = `
   border-b-2 border-solid
 `
 
-export default CategoryItem
+export { CategoryItem }

@@ -32,4 +32,4 @@ const inputStyles = `
   duration-500
 `
 
-export default SearchGif
+export { SearchGif }
