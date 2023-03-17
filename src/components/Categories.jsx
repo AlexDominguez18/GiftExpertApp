@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { AddCategory, CategoryItem } from './'
+import { FilterContext } from '../context/FilterContext'
 
 const Categories = () => {
   const [ categories, setCategories ] = useState(['One piece', 'Naruto', 'Dragon ball'])
+  const { changeFilter } = useContext(FilterContext);
 
   const addCategory = (newCategory) => {
     if (categories.includes(newCategory)) return    
     setCategories([...categories, newCategory])
+    changeFilter(newCategory)
   }
 
   return (
