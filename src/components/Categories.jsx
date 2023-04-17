@@ -1,14 +1,17 @@
 import { useState, useContext } from 'react'
 import { AddCategory, CategoryItem } from './'
+import { useCategoriesStorage } from "../hooks/useCategoriesStorage"
 import { FilterContext } from '../context/FilterContext'
 
 const Categories = () => {
-  const [ categories, setCategories ] = useState(['One piece', 'Naruto', 'Dragon ball'])
+  const { savedCategories, saveCategorie } = useCategoriesStorage()
+  const [ categories, setCategories ] = useState(savedCategories)
   const { changeFilter } = useContext(FilterContext);
 
   const addCategory = (newCategory) => {
     if (categories.includes(newCategory)) return    
     setCategories([...categories, newCategory])
+    saveCategorie(newCategory)
     changeFilter(newCategory)
   }
 
@@ -21,7 +24,7 @@ const Categories = () => {
             categories.length
               ? categories.map((category) => <CategoryItem key={category} category={category} />)
               : <p className="text-center text-slate-700">No categories</p>
-            }
+          }
         </ol>
         <AddCategory onNewCategory={ addCategory } />
       </div>

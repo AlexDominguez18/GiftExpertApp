@@ -1,13 +1,24 @@
+import { useContext } from "react"
+import { FilterContext } from "../context/FilterContext"
 import { SearchIcon } from "./"
 
 const SearchGif = () => {
+  const { changeFilter } = useContext(FilterContext) 
+
+  const handleSearch = (e) => {
+    const value = e.target.value
+    if (!value) changeFilter(undefined)
+    else changeFilter(value)
+  }
+
   return (
     <div className={ searchIconStyles }>
       <SearchIcon />
       <input 
         className={ inputStyles }
         type="text"
-        placeholder="Search gif.." 
+        placeholder="Search gif.."
+        onChange={ handleSearch }
       />
     </div>
   )
