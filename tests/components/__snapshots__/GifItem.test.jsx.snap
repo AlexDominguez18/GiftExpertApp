@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifItem Component Tests Should match the snapshot 1`] = `
+<div>
+  <div
+    class="
+  p-2
+  m-2
+  border border-solid
+  bg-slate-100
+  rounded-lg
+  shadow-lg
+  flex
+  flex-col
+"
+  >
+    <img
+      alt="Title"
+      class="h-52"
+      src="https://example.com/image.jpgw"
+    />
+    <p
+      class="text-center"
+    >
+      Title
+    </p>
+  </div>
+</div>
+`;
